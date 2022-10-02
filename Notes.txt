@@ -1,0 +1,32 @@
+    {
+      id: 1,
+      text: 'Shopping Decathelon',
+      day: 'Monday',
+      reminder: false
+    },
+    {
+      id: 2,
+      text: 'Gym',
+      day: 'Tuesday',
+      reminder: false
+    },
+    {
+      id: 3,
+      text: 'Bathroom Cleaning',
+      day: 'Wednesday',
+      reminder: true
+    }
+
+ // Local storage to store tasks
+  document.addEventListener('DOMContentLoaded', displayTasks);
+
+  const displayTasks = () => {
+    let tasks;
+    if(localStorage.getItem('tasks') == null) {
+      tasks = [];
+    }
+    else {
+      tasks = JSON.parse(localStorage.getItem('bookmarks'));
+    }
+    return tasks;
+  }
